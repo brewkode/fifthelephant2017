@@ -1,0 +1,41 @@
+Speaker: Regunath
+- query language - sql || k,v || graph
+- Processing dimension - Bulk / Incremental
+- Do you need - ACID - 1.0 txs, staleness, ordering, durable? vs 
+  - ACID 2.0 - Scaling, Associative, Commutative, Idempotent, Distributed; transaction support, relaxed ordering - CRDTs, atleast-once delivery, HA
+- Wire Protocol - compatibility with existing wire protocols - like http / grpc / postgres wire protocol / memcached / jdbc
+- Schema vs Schema(less)
+- Do you need CQRS ?
+- Pluggable persistence, secondary indices - Graph
+- Other considerations
+  - Performance benchmarks - Latency / Thru put / Concurrency
+  - Operations & Maintenance - MySQL as backend datastore for FB TAO
+  - Support
+  - Hosted Service
+
+Under the hood
+- Database type 
+  - relational (row based) vs columnar (column stored together)
+  - Document / KV
+- Data organization
+  - B-Tree
+  - LSM - Log structured merge - append only, high speed inserts, reduces write amplification
+- replication
+  - sync / async
+- consensus
+  - used in leader election
+- Jepsen tests for the software of choice
+- Data export / restore - RPO / RTO - for DR
+  - tools full export
+  - large scale data migration
+- MTTR - Node failure / Minor outages
+  - promoting hot-standby
+- Cost
+  - Disk-Mem ratio
+  - Power consumption
+  - Density storage
+- Data block-cache / buffer-pool
+  - reduce disk i/0
+  - lower latency on repeated reads
+  - probabilistic ds - blooms
+- 

@@ -1,0 +1,9 @@
+- Comparison of Monoliths vs Newer systems (like Aircraft Vs Tensorflow)
+- Ref: Part time parliament - Leslie Lamport
+- Ref: CAP Theorem
+- AP(Cassandra / CouchDB / DynamoDB / Riak) vs CP (Mongo / HBase)  systems
+- CA - RDBMS
+- Pnuts - Y!
+- 2 PC / 3 PC protocols
+- Spanner - TrueTime API
+- 

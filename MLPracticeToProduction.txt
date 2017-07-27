@@ -1,0 +1,44 @@
+Ramanan
+
+- Preprocessing
+- Training
+- Prediction
+- Delivery
+
+
+Part 1 - data, data, data
+- Problem -> Collect -> Metrics -> Solve
+- Collect -> Collect -> Collect; 
+  - Problem -> Solve
+- Storage is cheap, data is NOT
+- Numerous data sources
+- Transfer learning - pre-trained weights
+- Source of bias, Contextualization or Localization
+
+Organizing datasets
+- Unbalanced datasets - 99% are not fraudulent
+- Resampling - undersampling, synthetic datasets
+
+Preprocessing playbooks
+- Tokenization / Stopwords
+- Dictionary / Embed
+- Encode / Attention
+
+Images
+- Resizing / Normalization / Whitening / Augmentation / Dimensionality
+
+Part 2 - Model
+- Problem solving by practice
+- Learning by gradient descent
+- cheat sheet - for picking the right estimator
+- Simple heuristic (set of rules) -> Complex heuristic
+- Start modelling when you move from Simple heuristic to Complex heuristic
+- Simplify your first objective - interpretable - accuracy vs explainability
+- Ensembles all the way down
+
+Model calibration
+- Underconfident vs over-confident
+- Cautious Vs Decisive
+
+Past performance
+- Launch first / break things / iterate next
