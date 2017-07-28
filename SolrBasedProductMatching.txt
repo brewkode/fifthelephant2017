@@ -1,0 +1,35 @@
+Shubham kumar
+(DataWeave)
+
+- Semantics & Categorical Attributes
+
+Challenges
+- understanding the semantic attributes
+- extracting image features
+- expensive training process
+- proper training dataset
+
+Solution
+- use description of the product to enhance performance of image matching
+
+Solr
+- store deep learning features as numeric list
+- create buckets of similar images
+- LSH / Kernel based LSH
+- Self taught hashing
+
+Model to learn the hash function itself
+
+Why self taught hashing
+- Semantic hashing - mapping semantically similar images to nearby addresses
+- binarized laplacian eigenmap decomp
+- ML model as a hash
+
+- New request handler
+- Creating buckets of relevant documents using:
+ - text based attributes
+ - title sim
+ - image hash bounds
+- re-rank of documents based on sim
+- tight coupling data with algo
+
