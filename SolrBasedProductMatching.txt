@@ -33,3 +33,4 @@ Why self taught hashing
 - re-rank of documents based on sim
 - tight coupling data with algo
 
+- deep features from the final layer

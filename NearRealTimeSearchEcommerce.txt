@@ -1,0 +1,109 @@
+Umesh
+
+
+- e-commerce search - top positions at premium
+- Normal Day - Ranking
+ - Function(user intent, product)
+ - intent - historic, session
+ - explicit - query + filters
+ - tmeporal + personal
+
+Sales day
+- Price / Discount
+- instant gratification
+- delivery experience
+
+Reduce data log
+- source of truth -> search index -> api
+
+source of truth
+- catalog service
+- availability service
+- seller rating service
+- promise service
+- offer service
+- pricing service
+
+Data pipeline
+- Source of truth -> 
+- Streaming Updates
+- Kafka + Storm
+Caches
+- Search Index
+- Couchbase with TTL
+- top URL refresher
+
+Search Index - demystifying lucene
+- Storage - directory (RAM / File / HDFS / MMap)
+- Data Serialization - Codecs
+  - BitSets
+  - Column oriented Fields
+  - Stored fields
+  - Term vector
+
+
+- Lucene segment merges for near real-time index
+- Take segment mappings out - segment is immutable
+- Merges killed it
+
+- Mostly SKU attributes
+- Changing vs unchanging fields
+
+Base index
+- text relevance / meta fields / product ratings
+
+NRT store
+- Streaming updates
+- Serve Live traffic
+- Commitless
+- Remove SPOF
+- Support bursts updates
+- Optimized for Ranking
+
+NRT Store
+- Substore 
+  - NRT Forward Index - > List<DocValues>
+  - NRT Inv Index -> List<PostingList>
+- C - store - cstore/vldb.pdf
+- Docvalues are really minin ORC / Parquet
+
+ForwardIndex Design
+- <T> get(String key)
+- HashMap
+ - Recap: 10sec for 1 million lookups
+ - Integer Ord -> String
+ - String -> hashCode
+ - HashCode to Bucket
+ - <1% of the hashmap will be referred
+- Remove typecast
+
+V2
+- Primary key - Integer Ord
+- Update Path
+ - Primary key -> Ord
+ - Update values for Ord
+ - Lucene manages rest
+- Lookup Path
+ - Ord -> NRT Ord (Another array)
+
+
+
+Final Solution
+- Lucene Extensions
+- Integrate with Custom Inv Index
+- EC between replicas
+- Target
+ - liveliness
+ - higher thru
+ - consistent latency
+
+Solr Int points
+- Value Sources
+- Filtering
+- Query
+- Custom FacetComponent
+
+NRT Arch
+- Micro services -> Kafka -> Lucene Updates -> Solr Master (commit / replicate / re-open )
+- Solr replica [ NRT Inv, Fwd, Ranking, Faceting, MAtching, Lucene ]
+
